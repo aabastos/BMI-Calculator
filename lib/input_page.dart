@@ -13,6 +13,8 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Color maleCardColor = kActiveCardColor;
   Color femaleCardColor = kInactiveCardColor;
+
+  int height = 170;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,7 +67,53 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: CardContainer(
               cardColor: kActiveCardColor,
-              cardChild: null,
+              cardChild: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'ALTURA',
+                    style: kLabelTextStyle,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    children: [
+                      Text(
+                        height.toString(),
+                        style: kNumberTextStyle,
+                      ),
+                      Text(
+                        'cm',
+                        style: kLabelTextStyle,
+                      )
+                    ],
+                  ),
+                  SliderTheme(
+                    data: SliderTheme.of(context).copyWith(
+                      thumbShape: RoundSliderThumbShape(
+                        enabledThumbRadius: 15.0,
+                      ),
+                      overlayShape: RoundSliderOverlayShape(
+                        overlayRadius: 30.0,
+                      ),
+                      thumbColor: kSliderThumbColor,
+                      overlayColor: kSliderThumbOverlayColor,
+                      activeTrackColor: kSliderActiveTrackColor,
+                      inactiveTrackColor: kSliderInactiveTrackColor,
+                    ),
+                    child: Slider(
+                      value: height.toDouble(),
+                      min: kSliderMinValue,
+                      max: kSliderMaxValue,
+                      onChanged: (double value) {
+                        setState(() {
+                          height = value.round();
+                        });
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           Expanded(
