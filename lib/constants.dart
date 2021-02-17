@@ -18,5 +18,7 @@ const Color kSliderActiveTrackColor = Color(0xFFFFFFFF);
 const Color kSliderInactiveTrackColor = Color(0xFF8D9E98);
 const Color kBottomButtonColor = Color(0xFFEB1555);
 
+const Color kBackgroundButtonsColor = Color(0xFF4C4F5E);
+
 const double kSliderMinValue = 120.0;
 const double kSliderMaxValue = 220.0;
