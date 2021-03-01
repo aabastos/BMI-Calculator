@@ -4,6 +4,12 @@ import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/material.dart';
 
 class ResultPage extends StatelessWidget {
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
+
+  ResultPage({this.bmiResult, this.resultText, this.interpretation});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,15 +26,15 @@ class ResultPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
-                    'NORMAL',
+                    this.resultText,
                     style: kStatusTextStyle,
                   ),
                   Text(
-                    '00.0',
+                    this.bmiResult,
                     style: kResultNumberTextStyle,
                   ),
                   Text(
-                    'Você está no índice ideal!',
+                    this.interpretation,
                     style: kResultDescriptionTextStyle,
                     textAlign: TextAlign.center,
                   ),

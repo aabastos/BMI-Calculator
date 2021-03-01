@@ -1,5 +1,6 @@
 import 'package:bmi_calculator/components/circular_button.dart';
 import 'package:bmi_calculator/components/footer_button.dart';
+import 'package:bmi_calculator/tools/calculator.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -213,7 +214,23 @@ class _InputPageState extends State<InputPage> {
           ),
           FooterButton(
             onTap: () {
-              Navigator.pushNamed(context, '/results');
+              Calculator calc = new Calculator(
+                height: this.height,
+                weight: this.weight,
+              );
+
+              String bmiResult = calc.calculateBMI();
+              String resultText = calc.getResult();
+              String interpretation = calc.getDescription();
+              Navigator.pushNamed(
+                context,
+                '/results',
+                arguments: {
+                  "bmiResult": bmiResult,
+                  "resultText": resultText,
+                  "interpretation": interpretation,
+                },
+              );
             },
             text: 'CALCULAR',
           )
