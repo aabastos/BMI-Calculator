@@ -2,7 +2,7 @@
 
 Projeto desenvolvido em cima do curso The Complete 2021 Flutter Development Bootcamp with Dart na Udemy by Angela Yu.
 
-O aplicativo consistem em calcular o IMC de acordo com as informações entradas pelo usuário.
+O aplicativo consiste em calcular o IMC de acordo com as informações entradas pelo usuário.
 
 ## Página Inicial
 
