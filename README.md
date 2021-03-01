@@ -8,7 +8,7 @@ O aplicativo consistem em calcular o IMC de acordo com as informações entradas
 
 Pagina inicial do aplicativo para que o usuário possa inserir as informações necessárias para o cálculo.
 
-![Pagina Inicial](https://github.com/aabastos/BMI-Calculator/blob/master/prints/print1.jpeg)
+![Pagina Inicial](https://github.com/aabastos/BMI-Calculator/blob/master/prints/print1.jpeg?raw=true)
 
 ## Resultado
 
